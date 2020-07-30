@@ -16,5 +16,9 @@ class House(name: String,  mascot: String, headOfHouse: String, houseGhost: Stri
           this.houseGhost = houseGhost
           this.founder = founder
      }
+
+     fun getName(): String? {
+        return this.name;
+    }
 }
 

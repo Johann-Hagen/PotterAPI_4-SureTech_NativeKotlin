@@ -33,7 +33,7 @@ class GSONutility (){
         var jsonStudents: JsonObject = JsonObject()
 
         //doAsync will asynchronously get the Json object using a NetworkHelper object
-        doAsync { jsonStudents = NetworkHelper().getJsonObject("Houses") }
+        doAsync { jsonStudents = NetworkHelper().getJsonObject("Characters") }
 
         //Gson generates a list of Students from the JsonObject I received from the API
         val students: List<Student> = gson.fromJson(jsonStudents, listOf<Student>().javaClass);
@@ -45,7 +45,7 @@ class GSONutility (){
         var jsonSpells: JsonObject = JsonObject()
 
         //doAsync will asynchronously get the Json object using a NetworkHelper object
-        doAsync { jsonSpells = NetworkHelper().getJsonObject("Houses") }
+        doAsync { jsonSpells = NetworkHelper().getJsonObject("Spells") }
 
         //Gson generates a list of Spells from the JsonObject I received from the API
         val spells: List<Spell> = gson.fromJson(jsonSpells, listOf<Spell>().javaClass);
