@@ -3,9 +3,9 @@ package com.example.hogwarts_studentportal.networkUtilities.typeClasses
 //typeObject for Spells with all necessary properties
 class Spell(spell: String, type: String, effect: String) {
 
-    private var spell: String? = null
-    private var type: String? = null
-    private var effect: String? = null
+     var spell: String? = null
+     var type: String? = null
+     var effect: String? = null
 
     init {
         this.spell = spell

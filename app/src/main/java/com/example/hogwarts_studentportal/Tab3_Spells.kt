@@ -5,6 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.hogwarts_studentportal.networkUtilities.typeClasses.Spell
+import com.example.hogwarts_studentportal.networkUtilities.typeClasses.Student
+import com.example.hogwarts_studentportal.recyclerViewUtilities.SpellRecyclerAdapter
+import com.example.hogwarts_studentportal.recyclerViewUtilities.StudentRecyclerAdapter
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -20,6 +26,34 @@ class Tab3_Spells : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+
+    private var spellAdapter: SpellRecyclerAdapter? = null
+    private var spells: ArrayList<Spell>? = null
+    private var recycler: RecyclerView.LayoutManager? = null
+    private val mySpellRecycler: RecyclerView? = null;
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val myStudentRecycler = view.findViewById<RecyclerView>(R.id.mySpellRecycler)
+        spells = ArrayList<Spell>()
+        spells!!.add(Spell("spell 1", "charm", "Yeets"))
+        spells!!.add(Spell("spell 2", "charm", "Yeets"))
+        spells!!.add(Spell("spell 3", "charm", "Yeets"))
+        spells!!.add(Spell("spell 4", "charm", "Yeets"))
+        spells!!.add(Spell("spell 5", "charm", "Yeets"))
+        spells!!.add(Spell("spell 6", "charm", "Yeets"))
+        spells!!.add(Spell("spell 7", "charm", "Yeets"))
+        spells!!.add(Spell("spell 8", "charm", "Yeets"))
+        spells!!.add(Spell("spell 9", "charm", "Yeets"))
+        spells!!.add(Spell("spell 10", "charm", "Yeets"))
+        recycler = LinearLayoutManager(this.context)
+        spellAdapter = SpellRecyclerAdapter(spells!!, this.context!!)
+
+
+        myStudentRecycler?.layoutManager = recycler
+        myStudentRecycler?.adapter = spellAdapter
+        spellAdapter!!.notifyDataSetChanged()
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

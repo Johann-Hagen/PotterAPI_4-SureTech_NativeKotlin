@@ -3,14 +3,14 @@ package com.example.hogwarts_studentportal.networkUtilities.typeClasses
 //typeObject for Hogwarts Students with all necessary properties
 class Student(id: String, name: String, house: String, ministryOfMagic: Boolean, orderOfThePhoenix: Boolean, dumbledoresArmy: Boolean, deathEater: Boolean, bloodStatus: String){
 
-    private var id: String? = null
-    private var name: String? = null
-    private var house: String? = null
-    private var ministryOfMagic: Boolean? = null
-    private var orderOfThePhoenix: Boolean? = null
-    private var dumbledoresArmy: Boolean? = null
-    private var deathEater: Boolean? = null
-    private var bloodStatus: String? = null;
+     var id: String? = null
+     var name: String? = null
+     var house: String? = null
+     var ministryOfMagic: Boolean? = null
+     var orderOfThePhoenix: Boolean? = null
+     var dumbledoresArmy: Boolean? = null
+     var deathEater: Boolean? = null
+     var bloodStatus: String? = null;
 
     init {
         this.id = id
