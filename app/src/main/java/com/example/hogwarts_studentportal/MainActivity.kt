@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
+import org.jetbrains.anko.longToast
 
 
 class MainActivity : AppCompatActivity() {
@@ -14,7 +15,13 @@ class MainActivity : AppCompatActivity() {
 
         btnLogin.setOnClickListener(){
             if (txtUsername.text != null && txtPassword.text != null){
-                startActivity(Intent(this, Home_Page::class.java))
+                if (txtPassword.text.toString() == "Password"){
+                    longToast("Enter Wizard Name and Password!")
+                }
+                val intent = Intent(this, LoadingScreen::class.java)
+                intent.putExtra("userName", txtUsername.text)
+                intent.putExtra("password", txtPassword.text)
+                startActivity(intent)
             }
         }
 

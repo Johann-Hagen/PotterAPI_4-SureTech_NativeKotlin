@@ -1,24 +1,21 @@
 package com.example.hogwarts_studentportal.networkUtilities.typeClasses
 
-//typeObject for Hogwarts houses with all necessary properties
-class House(name: String,  mascot: String, headOfHouse: String, houseGhost: String, founder: String){
 
-     private var name: String? = null
-     private var mascot: String? = null
-     private var headOfHouse: String? = null
-     private var houseGhost: String? = null
-     private var founder: String? = null
+import com.google.gson.annotations.SerializedName
 
-     init {
-         this.name = name
-          this.mascot = mascot
-          this.headOfHouse = headOfHouse
-          this.houseGhost = houseGhost
-          this.founder = founder
-     }
-
-     fun getName(): String? {
-        return this.name;
-    }
-}
-
+data class House(
+    @SerializedName("colors")
+    val colors: List<String> = listOf(),
+    @SerializedName("founder")
+    val founder: String = "",
+    @SerializedName("headOfHouse")
+    val headOfHouse: String = "",
+    @SerializedName("houseGhost")
+    val houseGhost: String = "",
+    @SerializedName("_id")
+    val id: String = "",
+    @SerializedName("mascot")
+    val mascot: String = "",
+    @SerializedName("name")
+    val name: String = ""
+  )

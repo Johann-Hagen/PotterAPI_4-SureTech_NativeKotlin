@@ -14,7 +14,6 @@ import com.example.hogwarts_studentportal.recyclerViewUtilities.SpellRecyclerAda
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
-
 /**
  * A simple [Fragment] subclass.
  * Use the [Tab4_Favourites.newInstance] factory method to

@@ -1,15 +1,15 @@
 package com.example.hogwarts_studentportal.networkUtilities.typeClasses
 
-//typeObject for Spells with all necessary properties
-class Spell(spell: String, type: String, effect: String) {
 
-     var spell: String? = null
-     var type: String? = null
-     var effect: String? = null
+import com.google.gson.annotations.SerializedName
 
-    init {
-        this.spell = spell
-        this.type = type
-        this.effect = effect
-    }
-}
+data class Spell(
+    @SerializedName("effect")
+    val effect: String = "",
+    @SerializedName("_id")
+    val id: String = "",
+    @SerializedName("spell")
+    val spell: String = "",
+    @SerializedName("type")
+    val type: String = ""
+)

@@ -1,25 +1,25 @@
 package com.example.hogwarts_studentportal.networkUtilities.typeClasses
 
-//typeObject for Hogwarts Students with all necessary properties
-class Student(id: String, name: String, house: String, ministryOfMagic: Boolean, orderOfThePhoenix: Boolean, dumbledoresArmy: Boolean, deathEater: Boolean, bloodStatus: String){
 
-     var id: String? = null
-     var name: String? = null
-     var house: String? = null
-     var ministryOfMagic: Boolean? = null
-     var orderOfThePhoenix: Boolean? = null
-     var dumbledoresArmy: Boolean? = null
-     var deathEater: Boolean? = null
-     var bloodStatus: String? = null;
+import com.google.gson.annotations.SerializedName
 
-    init {
-        this.id = id
-        this.name = name
-        this.house = house
-        this.ministryOfMagic = ministryOfMagic
-        this.orderOfThePhoenix = orderOfThePhoenix
-        this.dumbledoresArmy = dumbledoresArmy
-        this.deathEater = deathEater
-        this.bloodStatus = bloodStatus
-    }
-}
+data class Student(
+       @SerializedName("bloodStatus")
+    val bloodStatus: String = "",
+       @SerializedName("deathEater")
+    val deathEater: Boolean = false,
+    @SerializedName("dumbledoresArmy")
+    val dumbledoresArmy: Boolean = false,
+    @SerializedName("house")
+    val house: String = "",
+    @SerializedName("_id")
+    val id: String = "",
+    @SerializedName("ministryOfMagic")
+    val ministryOfMagic: Boolean = false,
+    @SerializedName("name")
+    val name: String = "",
+    @SerializedName("orderOfThePhoenix")
+    val orderOfThePhoenix: Boolean = false,
+    @SerializedName("role")
+    val role: String = ""
+    )

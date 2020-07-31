@@ -1,18 +1,19 @@
 package com.example.hogwarts_studentportal
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.hogwarts_studentportal.R
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.hogwarts_studentportal.networkUtilities.PotterAPIinterface
 import com.example.hogwarts_studentportal.networkUtilities.typeClasses.Student
 import com.example.hogwarts_studentportal.recyclerViewUtilities.StudentRecyclerAdapter
-import kotlinx.android.synthetic.main.fragment_tab2__students.*
-import kotlinx.android.synthetic.*
-import kotlinx.android.synthetic.main.fragment_tab2__students.*
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -37,23 +38,20 @@ class Tab2_Students : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val myStudentRecycler = view.findViewById<RecyclerView>(R.id.myStudRecycler)
+        val apiservice = PotterAPIinterface()
         students = ArrayList<Student>()
-        students!!.add(Student("1","Karl","Doe",false,false,true,false,"pure-blood"))
-        students!!.add(Student("2","John","Johnson",false,false,false,true,"pure-blood"))
-        students!!.add(Student("1","Karl","Doe",false,false,true,false,"pure-blood"))
-        students!!.add(Student("2","John","Johnson",false,false,false,true,"pure-blood"))
-        students!!.add(Student("1","Karl","Doe",false,false,true,false,"pure-blood"))
-        students!!.add(Student("2","John","Johnson",false,false,false,true,"pure-blood"))
-        students!!.add(Student("1","Karl","Doe",false,false,true,false,"pure-blood"))
-        students!!.add(Student("2","John","Johnson",false,false,false,true,"pure-blood"))
+        GlobalScope.launch(Dispatchers.Main) {
+            var stdddlist = apiservice.getallstudents().await()
+            students = stdddlist
+            Log.d(tag, students!![0].toString())
+            recycler = LinearLayoutManager(context)
+            studentAdapter = StudentRecyclerAdapter(students!!, context!!)
+            myStudentRecycler?.layoutManager = recycler
+            myStudentRecycler?.adapter = studentAdapter
+            studentAdapter!!.notifyDataSetChanged()
+        }
 
-        recycler = LinearLayoutManager(this.context)
-        studentAdapter = StudentRecyclerAdapter(students!!, this.context!!)
 
-
-        myStudentRecycler?.layoutManager = recycler
-        myStudentRecycler?.adapter = studentAdapter
-        studentAdapter!!.notifyDataSetChanged()
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
