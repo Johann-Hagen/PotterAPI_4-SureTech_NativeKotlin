@@ -1,4 +1,5 @@
 package com.example.hogwarts_studentportal.networkUtilities
+import com.example.hogwarts_studentportal.networkUtilities.typeClasses.HouseList
 import kotlinx.coroutines.Deferred
 import com.example.hogwarts_studentportal.networkUtilities.typeClasses.SpellList
 import com.example.hogwarts_studentportal.networkUtilities.typeClasses.StudentList
@@ -20,6 +21,9 @@ interface PotterAPIinterface {
      fun getallstudents(
           @Query("role") role: String = "student"
      ): Deferred<StudentList>
+
+     @GET("houses")
+     fun getallHouses(): Deferred<HouseList>
 
      companion object{
           operator  fun invoke(): PotterAPIinterface{
@@ -47,7 +51,6 @@ interface PotterAPIinterface {
                     .addConverterFactory(GsonConverterFactory.create())
                     .build()
                     .create(PotterAPIinterface::class.java)
-
           }
      }
 }

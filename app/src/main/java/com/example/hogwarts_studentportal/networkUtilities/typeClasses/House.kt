@@ -2,6 +2,7 @@ package com.example.hogwarts_studentportal.networkUtilities.typeClasses
 
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class House(
     @SerializedName("colors")
@@ -18,4 +19,4 @@ data class House(
     val mascot: String = "",
     @SerializedName("name")
     val name: String = ""
-  )
+  ): Serializable

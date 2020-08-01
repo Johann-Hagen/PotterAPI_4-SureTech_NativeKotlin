@@ -2,10 +2,11 @@ package com.example.hogwarts_studentportal.networkUtilities.typeClasses
 
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class Student(
        @SerializedName("bloodStatus")
-    val bloodStatus: String = "",
+       val bloodStatus: String = "",
        @SerializedName("deathEater")
     val deathEater: Boolean = false,
     @SerializedName("dumbledoresArmy")
@@ -21,5 +22,7 @@ data class Student(
     @SerializedName("orderOfThePhoenix")
     val orderOfThePhoenix: Boolean = false,
     @SerializedName("role")
-    val role: String = ""
-    )
+    val role: String = "",
+    @SerializedName("species")
+    val species: String = ""
+    ): Serializable

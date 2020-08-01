@@ -26,12 +26,12 @@ private const val ARG_PARAM2 = "param2"
  * Use the [Tab3_Spells.newInstance] factory method to
  * create an instance of this fragment.
  */
-class Tab3_Spells : Fragment() {
+class Tab3_Spells(val spells: ArrayList<Spell>) : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
     private var spellAdapter: SpellRecyclerAdapter? = null
-    private var spells: ArrayList<Spell>? = null
+
     private var recycler: RecyclerView.LayoutManager? = null
     private val mySpellRecycler: RecyclerView? = null;
 
@@ -40,19 +40,19 @@ class Tab3_Spells : Fragment() {
         val myStudentRecycler = view.findViewById<RecyclerView>(R.id.mySpellRecycler)
         val apiservice = PotterAPIinterface()
 
-        spells = ArrayList<Spell>()
 
-        GlobalScope.launch(Dispatchers.Main){
-            val spelllist =apiservice.getsllSpells().await()
-            spells = spelllist
+
+
+
+
             Log.d(tag, spells!!.size.toString())
             recycler = LinearLayoutManager(context)
             spellAdapter = SpellRecyclerAdapter(spells!!, context!!)
             myStudentRecycler?.layoutManager = recycler
             myStudentRecycler?.adapter = spellAdapter
             spellAdapter!!.notifyDataSetChanged()
-        }
-        Log.d(tag, spells!!.size.toString())
+
+
 
 
 
@@ -77,23 +77,6 @@ class Tab3_Spells : Fragment() {
         return inflater.inflate(R.layout.fragment_tab3__spells, container, false)
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment Tab3_Spells.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            Tab3_Spells().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
-    }
+
+
 }

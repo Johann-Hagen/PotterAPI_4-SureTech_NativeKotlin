@@ -17,11 +17,14 @@ class MainActivity : AppCompatActivity() {
             if (txtUsername.text != null && txtPassword.text != null){
                 if (txtPassword.text.toString() == "Password"){
                     longToast("Enter Wizard Name and Password!")
+                }else{
+
+                    val intent = Intent(this, LoadingScreen::class.java)
+                    intent.putExtra("userName", txtUsername.text.toString())
+                    intent.putExtra("password", txtPassword.text.toString())
+                    startActivity(intent)
                 }
-                val intent = Intent(this, LoadingScreen::class.java)
-                intent.putExtra("userName", txtUsername.text)
-                intent.putExtra("password", txtPassword.text)
-                startActivity(intent)
+
             }
         }
 
