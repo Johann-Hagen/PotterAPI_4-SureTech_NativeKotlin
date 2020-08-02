@@ -4,8 +4,6 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.example.hogwarts_studentportal.networkUtilities.typeClasses.Spell
-import kotlinx.coroutines.Deferred
 
 @Dao
 interface FavouriteDAO {
@@ -17,6 +15,4 @@ interface FavouriteDAO {
 
     @Query("DELETE FROM Favourite WHERE Favourite.id = :id")
     fun deleteFav(id: String)
-
-
 }

@@ -9,9 +9,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.example.hogwarts_studentportal.R
 import androidx.recyclerview.widget.RecyclerView
-import com.example.hogwarts_studentportal.networkUtilities.typeClasses.Student
+import com.example.hogwarts_studentportal.networkUtilities.model.Student
 import com.example.hogwarts_studentportal.ui.detail_pages.StudentDetails
-import java.security.AccessController.getContext
 
 class StudentRecyclerAdapter (private val students: List<Student>,
 private val context: Context
@@ -23,11 +22,10 @@ private val context: Context
             val ageView: TextView = itemView.findViewById(R.id.studCardHouse) as TextView
             val imageView: ImageView = itemView.findViewById(R.id.HouseIMG) as ImageView
             when(student.house){
-                "Gryffindor" -> { imageView.setImageResource(R.drawable.gryffindor)}
-                "Slytherin" -> { imageView.setImageResource(R.drawable.slytherin)}
-                "Hufflepuff" -> { imageView.setImageResource(R.drawable.hufflepuff)}
-                "Ravenclaw" -> { imageView.setImageResource(R.drawable.ravenclaw)}
-
+                "Gryffindor"    -> { imageView.setImageResource(R.drawable.gryffindor)}
+                "Slytherin"     -> { imageView.setImageResource(R.drawable.slytherin)}
+                "Hufflepuff"    -> { imageView.setImageResource(R.drawable.hufflepuff)}
+                "Ravenclaw"     -> { imageView.setImageResource(R.drawable.ravenclaw)}
             }
             nameView.text = student.name
             ageView.text = student.house
@@ -45,7 +43,6 @@ private val context: Context
         return students.size
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int ): StudentRecyclerAdapter.ViewHolder {
-        // our view from our XML
         val view = LayoutInflater.from(context).inflate(R.layout.student_card, parent,false)
         return ViewHolder(view)
     }

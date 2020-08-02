@@ -2,18 +2,14 @@ package com.example.hogwarts_studentportal.ui.detail_pages
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.hogwarts_studentportal.R
-import com.example.hogwarts_studentportal.networkUtilities.typeClasses.House
-import com.example.hogwarts_studentportal.networkUtilities.typeClasses.Student
-import com.example.hogwarts_studentportal.networkUtilities.typeClasses.StudentList
+import com.example.hogwarts_studentportal.networkUtilities.model.House
+import com.example.hogwarts_studentportal.networkUtilities.model.Student
 import com.example.hogwarts_studentportal.recyclerViewUtilities.StudentRecyclerAdapter
-import org.jetbrains.anko.find
 
 
 class HouseDetails( ) : AppCompatActivity() {
@@ -48,9 +44,7 @@ class HouseDetails( ) : AppCompatActivity() {
             "Ravenclaw"->{
                 image.setImageResource(R.drawable.ravenclaw)}
         }
-
         var studentAdapter: StudentRecyclerAdapter? = null
-
         var recycler: RecyclerView.LayoutManager? = null
         var myStudentRecycler: RecyclerView? = null;
         myStudentRecycler = findViewById<RecyclerView>(R.id.houseStudentRecyclerView)

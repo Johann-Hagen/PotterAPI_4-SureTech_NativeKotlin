@@ -3,7 +3,7 @@ package com.example.hogwarts_studentportal.ui.detail_pages
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.hogwarts_studentportal.R
-import com.example.hogwarts_studentportal.networkUtilities.typeClasses.Student
+import com.example.hogwarts_studentportal.networkUtilities.model.Student
 import kotlinx.android.synthetic.main.activity_student_details.*
 
 class StudentDetails : AppCompatActivity() {
@@ -18,6 +18,5 @@ class StudentDetails : AppCompatActivity() {
         txtStudentHouse.text = student.house
         txtStudentRole.text = student.role
         txtStudentSpecies.text = student.species
-
     }
 }

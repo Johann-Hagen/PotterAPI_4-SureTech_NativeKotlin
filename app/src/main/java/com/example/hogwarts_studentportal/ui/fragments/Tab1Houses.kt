@@ -1,4 +1,4 @@
-package com.example.hogwarts_studentportal.ui
+package com.example.hogwarts_studentportal.ui.fragments
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,23 +7,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.hogwarts_studentportal.R
-import com.example.hogwarts_studentportal.networkUtilities.typeClasses.House
-import com.example.hogwarts_studentportal.networkUtilities.typeClasses.StudentList
+import com.example.hogwarts_studentportal.networkUtilities.model.House
+import com.example.hogwarts_studentportal.networkUtilities.model.StudentList
 import com.example.hogwarts_studentportal.ui.detail_pages.HouseDetails
 import kotlinx.android.synthetic.main.fragment_tab1__houses.*
 
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [Tab1_Houses.newInstance] factory method to
- * create an instance of this fragment.
- */
-class Tab1_Houses(
+class Tab1Houses(
     private val houses: ArrayList<House>, private val studentList: StudentList
 ) : Fragment() {
     private var param1: String? = null
@@ -82,26 +72,16 @@ class Tab1_Houses(
             startActivity(intent)
         }
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-
-
-
-
+        arguments?.let {}
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-
         return inflater.inflate(R.layout.fragment_tab1__houses, container, false)
     }
-
-
 }

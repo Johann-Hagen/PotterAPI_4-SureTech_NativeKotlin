@@ -1,4 +1,4 @@
-package com.example.hogwarts_studentportal.networkUtilities.typeClasses
+package com.example.hogwarts_studentportal.networkUtilities.model
 
 
 import com.google.gson.annotations.SerializedName

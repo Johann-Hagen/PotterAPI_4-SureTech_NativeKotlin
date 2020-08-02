@@ -11,11 +11,7 @@ abstract class FavDB(): RoomDatabase() {
         fun get(application: Application): FavDB{
             return Room.databaseBuilder(application, FavDB::class.java, "Favourites")
                 .build()
-
         }
     }
     abstract fun getFavouriteDAO(): FavouriteDAO
-
-
-
 }
