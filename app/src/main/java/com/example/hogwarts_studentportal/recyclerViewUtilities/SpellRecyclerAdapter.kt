@@ -27,7 +27,6 @@ class SpellRecyclerAdapter (private val spells: List<Spell>,
                 "Spell" -> {imageView.setImageResource(R.drawable.spell)}
                 "Curse" -> {imageView.setImageResource(R.drawable.curse)}
                 "Enchantment" -> {imageView.setImageResource(R.drawable.enchantment)}
-
             }
             nameView.text = spell.spell
             ageView.text = spell.type

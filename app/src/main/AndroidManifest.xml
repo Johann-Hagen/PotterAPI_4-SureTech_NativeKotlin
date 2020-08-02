@@ -15,11 +15,11 @@
         <activity android:name=".ui.detail_pages.StudentDetails" />
         <activity android:name=".ui.detail_pages.HouseDetails" />
         <activity
-            android:name=".Home_Page"
+            android:name=".ui.main.Home_Page"
             android:label="@string/title_activity_home__page"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".LoadingScreen" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".ui.main.LoadingScreen" />
+        <activity android:name=".ui.main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -1,17 +1,16 @@
-package com.example.hogwarts_studentportal
+package com.example.hogwarts_studentportal.ui.main
 
 import android.os.Bundle
-import android.os.Parcelable
 import com.google.android.material.tabs.TabLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
+import com.example.hogwarts_studentportal.R
 import com.example.hogwarts_studentportal.networkUtilities.typeClasses.House
 import com.example.hogwarts_studentportal.networkUtilities.typeClasses.Spell
 import com.example.hogwarts_studentportal.networkUtilities.typeClasses.Student
-import com.example.hogwarts_studentportal.ui.main.Pager2Adapter
+import com.example.hogwarts_studentportal.ui.adapters.Pager2Adapter
 import com.google.android.material.tabs.TabLayoutMediator
 import kotlinx.android.synthetic.main.activity_home__page.*
-import java.io.Serializable
 
 class Home_Page : AppCompatActivity() {
 

@@ -1,13 +1,12 @@
-package com.example.hogwarts_studentportal
+package com.example.hogwarts_studentportal.ui
 
 import android.content.Intent
 import android.os.Bundle
-import android.telecom.Call
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageButton
+import com.example.hogwarts_studentportal.R
 import com.example.hogwarts_studentportal.networkUtilities.typeClasses.House
 import com.example.hogwarts_studentportal.networkUtilities.typeClasses.StudentList
 import com.example.hogwarts_studentportal.ui.detail_pages.HouseDetails

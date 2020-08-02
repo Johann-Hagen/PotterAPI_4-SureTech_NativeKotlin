@@ -1,15 +1,14 @@
-package com.example.hogwarts_studentportal
+package com.example.hogwarts_studentportal.ui.main
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.hogwarts_studentportal.R
-import com.airbnb.lottie.LottieAnimationView
 import com.example.hogwarts_studentportal.networkUtilities.PotterAPIinterface
 import com.example.hogwarts_studentportal.networkUtilities.typeClasses.House
 import com.example.hogwarts_studentportal.networkUtilities.typeClasses.Spell
 import com.example.hogwarts_studentportal.networkUtilities.typeClasses.Student
-import kotlinx.android.synthetic.main.activity_loading_screen.*
+import com.example.hogwarts_studentportal.room.FavDB
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -29,7 +28,7 @@ class LoadingScreen : AppCompatActivity() {
         var houses: ArrayList<House> = ArrayList<House>()
         var spells: ArrayList<Spell> = ArrayList<Spell>()
         val apiService = PotterAPIinterface
-
+        FavDB.get(application)
         GlobalScope.launch(Dispatchers.Main) {
             students = apiService.invoke().getallstudents().await()
             spells = apiService.invoke().getsllSpells().await()

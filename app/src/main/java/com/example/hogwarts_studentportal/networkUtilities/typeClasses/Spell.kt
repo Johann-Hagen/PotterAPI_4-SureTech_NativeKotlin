@@ -13,7 +13,7 @@ data class Spell(
     val spell: String = "",
     @SerializedName("type")
     val type: String = "",
-    val favourite: Boolean = false
+    var favourite: Boolean = false
 
 ): Serializable
 
